@@ -26,5 +26,6 @@ class TrainOptions(BaseOptions):
         self.parser.add_argument('--lr_policy', type=str, default='lambda', help='learning rate policy: lambda|step|plateau')
         self.parser.add_argument('--lr_decay_iters', type=int, default=50, help='multiply by a gamma every lr_decay_iters iterations')
         self.parser.add_argument('--identity', type=float, default=0.5, help='use identity mapping. Setting identity other than 1 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set optidentity = 0.1')
-
+        self.parser.add_argument('--batch_size', type=int, default=32, help='training minibatch size. A batch size of 1 was used in the original paper.')
+        
         self.isTrain = True
